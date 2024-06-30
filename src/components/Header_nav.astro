@@ -1,0 +1,73 @@
+<header_nav>
+    <style>
+        #header_nav_container {
+            /*width: 100%;*/
+            background-color: var(--secondary_default_background_color);
+            color: var(--primary_text_color);
+            padding: 10px 5px 0;
+        }
+        #header_nav_inner {
+            width: 1000px;
+        }
+        a{
+            box-shadow: none;
+            padding: 8px;
+            padding-bottom: 2px;
+            background-color: var(--primary_default_background_color);
+            color: var(--primary_text_color);
+            cursor: pointer;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            margin: 0 2px;
+            filter: brightness(130%);
+            transition: all 500ms;
+        }
+        a span{
+            filter: brightness(80%);
+            text-shadow: 0 2px 3px #000;
+        }
+        .selected{
+            filter: brightness(100%);
+            font-weight: bold;
+        }
+        .selected span{
+            filter: brightness(100%)
+        }
+        a:hover{
+            filter: brightness(100%);
+        }
+        a:hover span{
+            filter: brightness(100%);
+        }
+
+    </style>
+    <div id="header_nav_container" class="layout horizontal  center-justified px-8">
+        <div id="header_nav_inner" class="layout horizontal start-justified end">
+            <a  each="{ page, i in nav_pages }" href="{page.url}" class="text-white">
+                <span>Home</span>
+            </a>
+            <a  each="{ page, i in nav_pages }" href="{page.url}" class="text-white">
+                <span>Partnership</span>
+            </a>
+            <a  each="{ page, i in nav_pages }" href="{page.url}" class="text-white">
+                <span>Faculty</span>
+            </a>
+            <a  each="{ page, i in nav_pages }" href="{page.url}" class="text-white">
+                <span>Students</span>
+            </a>
+            <a  each="{ page, i in nav_pages }" href="{page.url}" class="text-white">
+                <span>Alumni</span>
+            </a>
+            <a  each="{ page, i in nav_pages }" href="{page.url}" class="text-white">
+                <span>Summary</span>
+            </a>
+            <a  each="{ page, i in nav_pages }" href="{page.url}" class="text-white">
+                <span>Profile</span>
+            </a>
+            <a  each="{ page, i in nav_pages }" href="{page.url}" class="text-white">
+                <span>Admin</span>
+            </a>
+        </div>
+    </div>
+
+</header_nav>

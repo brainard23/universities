@@ -1,0 +1,38 @@
+<header_account>
+    <style>
+        #header_account_container {
+            width: 100%;
+            background-color: var(--secondary_default_background_color);
+            color: var(--secondary_text_color);
+        }
+        /* #header_account_inner {
+            width: 1000px;
+        } */
+        a{
+            color: var(--secondary_text_color);
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: .9em;
+            padding: 0 5px;
+            transition: all 0.3s ease;
+        }
+        a:hover{
+            text-decoration: none;
+            background-color: var(--primary_default_background_color);
+            color: var(--primary_text_color);
+        }
+
+    </style>
+    <div id="header_account_container" class="layout horizontal  center-justified">
+        <div id="header_account_inner" class="layout horizontal end-justified center">
+            <span if="" class="flex justify-end">
+<!--                <a if="{!ttw.user.user_type || !ttw.user.user_type.toLowerCase().includes('student')}" href="{ttw.root_url_1}/person/">{user.username.substring(0, user.username.indexOf('@'))} - My Profile</a>-->
+                <a href="">Student - My Profile</a>
+                <span style="font-size: 1.6em; font-weight: 300; line-height: 1em;">|</span>
+                <a if="{!__session.is_impersonating}" href="/unauth">Sign out</a>
+                <!-- <a if="{__session.is_impersonating}" href="/auth_back">Sign back</a> -->
+            </span>
+            <!-- <a href="/login/sso" if="{!user || !user.username}">Sign in</a> -->
+        </div>
+    </div>
+</header_account>

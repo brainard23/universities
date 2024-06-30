@@ -1,0 +1,64 @@
+<header_bib_nav>
+    <style>
+        #header_bib_nav_container {
+            /*width: 100%;*/
+            background-color: var(--secondary_default_background_color);
+            color: var(--primary_text_color);
+            padding: 0 5px 5px;
+        }
+        #header_bib_nav_inner {
+            width: 1000px;
+        }
+        a{
+            box-shadow: none;
+            padding-bottom: 8px;
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-top: 1.2px;
+            background-color: var(--secondary_default_background_color);
+            color: var(--secondary_text_color);
+            cursor: pointer;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            margin: 0 2px;
+            filter: brightness(100%);
+            transition: all 500ms;
+        }
+        a span{
+            filter: brightness(100%)
+        }
+        .selected{
+            filter: brightness(100%);
+            background-color: var(--primary_default_background_color) !important;
+            color: var(--primary_text_color) !important;
+            font-weight: bold;
+        }
+        .selected span{
+            filter: brightness(100%)
+        }
+        a:hover{
+            filter: brightness(80%);
+        }
+        a:hover span{
+            filter: brightness(120%);
+        }
+
+    </style>
+    <div id="header_bib_nav_container" class="layout horizontal center-justified p">
+        <div id="header_bib_nav_inner" class="layout horizontal start-justified start">
+            <a each="{ page, i in bib_nav_pages }" if="{!page.not_shown}" href="{page.url}" class="{page.title.includes(current_page_title.replace('_', ' ')) ? 'selected' : ''}">
+                <span>Admin</span>
+            </a>
+            <a each="{ page, i in bib_nav_pages }" if="{!page.not_shown}" href="{page.url}" class="selected">
+                <span>Establishments</span>
+            </a>
+            <a each="{ page, i in bib_nav_pages }" if="{!page.not_shown}" href="{page.url}" class="{page.title.includes(current_page_title.replace('_', ' ')) ? 'selected' : ''}">
+                <span>Users</span>
+            </a>
+            <a each="{ page, i in bib_nav_pages }" if="{!page.not_shown}" href="{page.url}" class="{page.title.includes(current_page_title.replace('_', ' ')) ? 'selected' : ''}">
+                <span>Faculty</span>
+            </a>
+        </div>
+    </div>
+ 
+</header_bib_nav>

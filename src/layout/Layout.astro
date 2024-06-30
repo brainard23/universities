@@ -1,0 +1,36 @@
+---
+import Header_container from "../components/Header_container.astro";
+import Content from "../components/Content.astro"
+import Layout_footer from "../components/Layout_footer.astro"
+
+const opts = {
+  ttw: {
+    nav_pages: [],
+    info: {
+      acronym: 'example',
+    },
+    header: {
+      logo: 'logo.png',
+    },
+    is_functions: false,
+  },
+};
+---
+
+<layout class="">
+  <Header_container ttw={opts.ttw}></Header_container>
+  <div class="layout vertical" id="">
+    <Content ttw={opts.ttw}></Content>
+    <div class="flex"></div>
+  </div>
+  <Layout_footer></Layout_footer>
+
+  <script type="module">
+    const self = this;
+    self.ttw = opts.ttw;
+    self.on('mount', function () {
+      self.ttw = opts.ttw;
+      const test2 = self.ttw.nav_pages;
+    });
+  </script>
+</layout>

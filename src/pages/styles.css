@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --secondary_text_color: #006747;
+    --primary_default_background_color: #006747;
+    --primary_text_color: #ffffff;
+    --secondary_default_background_color: #FFFDD0
+  }
+
+   
+   body {
+    padding: 0 0;
+    margin: 0 auto;
+   }

@@ -1,0 +1,60 @@
+---
+const { ttw, user } = Astro.props;
+import Header_nav from "./Header_nav.astro"
+import Header_account from "./Header_account.astro"
+import Header_bib_nav from "./Header_bib_nav.astro"
+
+---
+
+<style>
+  :scope {
+    font-family: var(--font_family, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif);
+  }
+  #header_container {
+    width: 100%;
+    /* position: fixed; */
+    right: 0px;
+    top: 0px;
+    z-index: 2;
+  }
+  a {
+    text-decoration: none;
+  }
+  #header {
+    opacity: 1;
+    height: var(--header_height);
+  }
+  #banner_container {
+    background-color: var(--primary_default_background_color);
+  }
+  header_bib_nav {
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+</style>
+
+<div id="header_container" class="layout horizontal">
+  <div id="header" ref="header" class="layout vertical center start-justified">
+    <Header_account ttw={ttw} user={user} class="self-stretch"></Header_account>
+    <Header_nav ttw={ttw} class="self-stretch"></Header_nav>
+    <div id="banner_container" class="layout horizontal center center-justified self-stretch">
+      <div style="width: 300px;" class="layout horizontal center start-justified">
+        <img src="/public/images/banner-logo.png" />
+      </div>
+    </div>
+    <Header_bib_nav ttw={ttw} class="self-stretch"></Header_bib_nav>
+    <div class="flex"></div>
+  </div>
+</div>
+
+<script type="module">
+  const self = this;
+
+  self.logo = 'banner_logo.png';
+  if (!ttw.is_functions) {
+    // Additional logic here
+  }
+
+  self.on('mount', () => {
+    // Additional logic here
+  });
+</script>
