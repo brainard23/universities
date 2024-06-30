@@ -27,7 +27,7 @@ const Table = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const querySnapshot = await getDocs(collection(db, "schools"));
+      const querySnapshot = await getDocs(collection(db, "universities"));
       const schoolsList = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
@@ -42,7 +42,7 @@ const Table = () => {
     if (add === 2) {
       setLoading(true);
       try {
-        await addDoc(collection(db, "schools"), {
+        await addDoc(collection(db, "universities"), {
           name: form.name,
           country: form.country,
           classification: form.classification,
